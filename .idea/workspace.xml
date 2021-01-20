@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7007be25-f8a8-4f90-b9cb-8c9293ed6bce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/GeLuoSong.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/GeLuoSong.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/component/LoadImgData.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/component/InitImageData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/component/Poker.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/component/Poker.py" afterDir="false" />
-    </list>
+    <list default="true" id="7007be25-f8a8-4f90-b9cb-8c9293ed6bce" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +14,7 @@
     <SUITE FILE_PATH="coverage/poker$Poker.coverage" NAME="Poker Coverage Results" MODIFIED="1611150605367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game/component" />
     <SUITE FILE_PATH="coverage/poker$Game.coverage" NAME="Game Coverage Results" MODIFIED="1611019046303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$Unit2_3_.coverage" NAME="Unit2-3_处理鼠标事件 Coverage Results" MODIFIED="1611039278351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
-    <SUITE FILE_PATH="coverage/poker$GeLuoSong.coverage" NAME="GeLuoSong Coverage Results" MODIFIED="1611157152531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
+    <SUITE FILE_PATH="coverage/poker$GeLuoSong.coverage" NAME="GeLuoSong Coverage Results" MODIFIED="1611157299436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
     <SUITE FILE_PATH="coverage/poker$Unit1.coverage" NAME="Unit1 Coverage Results" MODIFIED="1610972695439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
     <SUITE FILE_PATH="coverage/poker$Test.coverage" NAME="Test Coverage Results" MODIFIED="1611032372165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
     <SUITE FILE_PATH="coverage/poker$InitImageData.coverage" NAME="InitImageData Coverage Results" MODIFIED="1611155501918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game/component" />
@@ -28,48 +23,7 @@
     <SUITE FILE_PATH="coverage/poker$Unit2_2.coverage" NAME="Unit2-2 Coverage Results" MODIFIED="1610973702969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/game/GeLuoSong.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="e#1#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/component/InitImageData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/component/Poker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/img/play_dark.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/img/play.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -160,25 +114,6 @@
               <item name="poker" type="b2602c69:ProjectViewProjectNode" />
               <item name="poker" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-              <item name="pokerimg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="poker" type="b2602c69:ProjectViewProjectNode" />
@@ -371,23 +306,22 @@
       <workItem from="1611040120888" duration="8170000" />
       <workItem from="1611050398476" duration="5022000" />
       <workItem from="1611104817494" duration="6857000" />
-      <workItem from="1611149851188" duration="7235000" />
+      <workItem from="1611149851188" duration="7348000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57079000" />
+    <option name="totallyTimeSpent" value="57192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17910448" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.3167028" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.3167028" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -396,7 +330,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.33152762" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -643,8 +577,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/GeLuoSong.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="-943">
+          <caret line="34" column="46" lean-forward="true" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
           <folding>
             <element signature="e#1#14#0" expanded="true" />
           </folding>
