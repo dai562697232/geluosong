@@ -74,7 +74,6 @@ offset_y = 0
 FPS = 120
 FramePerSec = pygame.time.Clock()
 
-mouse_moving = False
 mouse_left_button_click = mouse_wheel_click = mouse_right_button_click = False
 start = False
 
@@ -104,10 +103,10 @@ groups = [first_put_group, second_put_group, third_put_group]
 put_area_start_width_list = [first_put_area_x_start, second_put_area_x_start, third_put_area_x_start]
 max_number = [3, 5, 5]
 pre_selected_list = [-1, -1, -1]
-cards_moving = [False, False, False]
+put_area_cards_moving = -1
 
 
-def func_hand_card_moving(group_index=-1):
+def handle_card_moving(group_index=-1):
     if group_index == -1:
         cur_card = player1.sprites()[hand_pre_selected]
         cur_card.selected(screen, (
@@ -134,6 +133,7 @@ def func_hand_card_moving(group_index=-1):
                     if not put_done:
                         cur_card.resize()
     else:
+        print(pre_selected_list[group_index])
         if pre_selected_list[group_index] != -1:
             cur_card = groups[group_index].sprites()[pre_selected_list[group_index]]
             cur_card.selected(screen, (
@@ -181,18 +181,19 @@ def on_mouse_to_put_area():
                     for j in range(len(groups[i])):
                         if j * SMALL_CARD_WIDTH < current_mouse_pos_x - put_area_start_width_list[i] < (
                                 j + 1) * SMALL_CARD_WIDTH:
-                            cards_moving[i] = True
+                            put_area_cards_moving = i
+                            print(put_area_cards_moving)
                             pre_selected_list[i] = j
 
-            if mouse_r_click(event):
-                for j in range(len(groups[i])):
-                    if j * SMALL_CARD_WIDTH < current_mouse_pos_x - put_area_start_width_list[i] < (
-                            j + 1) * SMALL_CARD_WIDTH:
-                        card = groups[i].sprites()[j]
-                        card.resize()
-                        groups[i].remove(card)
-                        player1.add(card)
-                        player1.sort_cards(sort_by_value)
+                if mouse_r_click(event):
+                    for j in range(len(groups[i])):
+                        if j * SMALL_CARD_WIDTH < current_mouse_pos_x - put_area_start_width_list[i] < (
+                                j + 1) * SMALL_CARD_WIDTH:
+                            card = groups[i].sprites()[j]
+                            card.resize()
+                            groups[i].remove(card)
+                            player1.add(card)
+                            player1.sort_cards(sort_by_value)
 
 
 while True:
@@ -244,14 +245,14 @@ while True:
             third_put_group.draw_to(screen, (third_put_area_x_start, put_area_height))
 
             if hand_card_moving:
-                func_hand_card_moving()
+                handle_card_moving()
 
-            elif first_put_card_moving:
-                func_hand_card_moving(0)
+            elif put_area_cards_moving != -1:
+                print("hello")
+                handle_card_moving(put_area_cards_moving)
 
 
             else:
-
 
                 # 检测鼠标位置
 
@@ -278,7 +279,7 @@ while True:
                         player1_card_area_y_start < current_mouse_pos_y < player1_card_area_y_end:
                     # print(current_mouse_pos_x - player1_area_start_width)
 
-                    index = -111
+                    index = -1
 
                     for i in range(cards_len):
                         if i != cards_len - 1:
@@ -309,16 +310,16 @@ while True:
 
             # 定义鼠标按键点击
             # 判断左键单击
+
+            print("hand_card_moving",hand_card_moving)
             if current_mouse_button_pressed_L:
                 pass
             # 判断左键收起
             else:
-                mouse_moving = False
                 CARD_MOVING_EVENTS["moving"] = False
                 hand_card_moving = False
                 first_put_card_moving = False
                 pre_selected_list[0] = -1
-                print(pygame.key.get_pressed()[K_1])
 
 
 
