@@ -21,6 +21,11 @@ FINISH_PUT_OUTLINE_BUTTON = 'finish_put_outline.png'
 EXCHANGE_BUTTON = 'exchange.png'
 EXCHANGE_OUTLINE_BUTTON = 'exchange_outline.png'
 
+MENU_BUTTON = 'menu_button.png'
+MENU_BUTTON_OUTLINE = 'menu_button_outline.png'
+
+
+
 
 class ImageData:
     cards_image_data = {}

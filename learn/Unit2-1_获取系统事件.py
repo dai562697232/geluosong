@@ -4,7 +4,7 @@ from sys import exit
 
 pygame.init()
 SCREEN_SIZE = (640, 480)
-screen = pygame.display.set_mode(SCREEN_SIZE, 0, 32)
+screen = pygame.display.set_mode(SCREEN_SIZE, 1, 32)
 
 font = pygame.font.SysFont("arial", 16);
 font_height = font.get_linesize()
