@@ -290,33 +290,39 @@ while True:
             # 渲染组件
             screen.blit(pygame.transform.scale(background2, pygame.display.get_window_size()), (0, 0))
             current_screen_width, current_screen_height = pygame.display.get_window_size()
-            width_scale = current_screen_width/screen_width
-            height_scale = current_screen_height/screen_height
-            print(width_scale,height_scale)
+            width_scale = current_screen_width / screen_width
+            height_scale = current_screen_height / screen_height
+            print(width_scale, height_scale)
 
             pygame.draw.rect(screen, (35, 104, 155),
-                             (first_put_area_x_start*width_scale, put_area_height*height_scale, 3 * SMALL_CARD_WIDTH*width_scale, SMALL_CARD_HEIGHT*height_scale), 2)
+                             (first_put_area_x_start * width_scale, put_area_height * height_scale,
+                              3 * SMALL_CARD_WIDTH * width_scale, SMALL_CARD_HEIGHT * height_scale), 2)
             pygame.draw.rect(screen, (35, 104, 155),
-                             (second_put_area_x_start*width_scale, put_area_height*height_scale, 5 * SMALL_CARD_WIDTH*width_scale, SMALL_CARD_HEIGHT*height_scale), 2)
+                             (second_put_area_x_start * width_scale, put_area_height * height_scale,
+                              5 * SMALL_CARD_WIDTH * width_scale, SMALL_CARD_HEIGHT * height_scale), 2)
             pygame.draw.rect(screen, (35, 104, 155),
-                             (third_put_area_x_start*width_scale, put_area_height*height_scale, 5 * SMALL_CARD_WIDTH*width_scale, SMALL_CARD_HEIGHT*height_scale), 2)
+                             (third_put_area_x_start * width_scale, put_area_height * height_scale,
+                              5 * SMALL_CARD_WIDTH * width_scale, SMALL_CARD_HEIGHT * height_scale), 2)
             # 渲染右下角功能区
             for i in range(len(lr_function_buttons_surf_list)):
                 if i == 0:
                     if len(player1.sprites()) > 0:
                         pass
                     else:
-                        screen.blit(pygame.transform.scale(lr_function_buttons_surf_list[i], (130*width_scale, 51*height_scale)), (
-                            lr_function_buttons_start_width,
-                            lr_function_buttons_start_height + i * lr_function_buttons_start_space))
+                        screen.blit(pygame.transform.scale(lr_function_buttons_surf_list[i],
+                                                           (130 * width_scale, 51 * height_scale)), (
+                                        lr_function_buttons_start_width,
+                                        lr_function_buttons_start_height + i * lr_function_buttons_start_space))
 
                 else:
-                    screen.blit(pygame.transform.scale(lr_function_buttons_surf_list[i], (130*width_scale, 51*height_scale)), (
-                        lr_function_buttons_start_width,
-                        lr_function_buttons_start_height + i * lr_function_buttons_start_space))
+                    screen.blit(pygame.transform.scale(lr_function_buttons_surf_list[i],
+                                                       (130 * width_scale, 51 * height_scale)), (
+                                    lr_function_buttons_start_width,
+                                    lr_function_buttons_start_height + i * lr_function_buttons_start_space))
 
-            screen.blit(pygame.transform.scale(buttons_image_data[EXCHANGE_BUTTON], (75*width_scale, 67*height_scale)),
-                        (third_put_area_x_start - 85, put_area_height + (SMALL_CARD_HEIGHT - 67) / 2))
+            screen.blit(
+                pygame.transform.scale(buttons_image_data[EXCHANGE_BUTTON], (75 * width_scale, 67 * height_scale)),
+                (third_put_area_x_start - 85, put_area_height + (SMALL_CARD_HEIGHT - 67) / 2))
 
             # 获取手牌区域位置数据
             cards_len = len(player1.sprites())

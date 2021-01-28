@@ -30,9 +30,13 @@ class Person():
         self.age = age
 
 
-t_list = [Person("张三", 20), Person("李四", 21), Person("王麻子", 25), Person("杨六", 32)]
+t_list = [Person("张三",22), Person("李四", 21), Person("王麻子", 25), Person("杨六", 32)]
 
-for i in range(len(t_list)):
-    if t_list[i].age == 21:
-        obj = t_list[i]
-        print(t_list.index(obj))
+p1 = t_list[2]
+t_list2 =[t_list[2]]
+t_list.remove(p1)
+print(t_list2)
+# for i in range(len(t_list)):
+#     if t_list[i].age == 21:
+#         obj = t_list[i]
+#         print(t_list.index(obj))

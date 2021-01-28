@@ -126,6 +126,7 @@ finish_put = False
 
 full_screen = False
 
+
 # get_optimal_combination(player1)
 # get_optimal_combination(player2)
 # get_optimal_combination(player3)
@@ -396,12 +397,12 @@ while True:
 
             player1.draw_to(screen, (player1_card_area_x_start, screen_height - NORMAL_CARD_HEIGHT - 10),
                             space=player1_area_card_spacing, pre_selected=hand_pre_selected)
-            player2.resize(-2)
-            player2.draw_to(screen, (0, 0))
+            # player2.resize(-2)
+            player2.draw_to(screen, (0, 100), 50)
             player3.resize(-2)
-            player3.draw_to(screen, (0, 100))
-            player4.resize(-2)
-            player4.draw_to(screen, (0, 200))
+            # player3.draw_to(screen, (0, 100))
+            # player4.resize(-2)
+            # player4.draw_to(screen, (0, 200))
 
             # 渲染放置区域
             for i in range(len(groups)):
@@ -461,13 +462,11 @@ while True:
             # 定义鼠标按键点击
             # 判断左键单击
 
-            if current_mouse_button_pressed_L:
-                pass
-            # 判断左键收起
-            else:
+            if not current_mouse_button_pressed_L:
                 hand_card_moving = False
                 first_put_card_moving = False
                 pre_selected_list[0] = -1
+
 
 
         # 登录界面

@@ -43,7 +43,7 @@ class Card(pygame.sprite.Sprite):
     colors_shape = ["♠", "♥", "♣", "♦"]
     colors_en = ["spades", "hearts", "clubs", "diamonds"]
 
-    def __init__(self, color, value, name, surface_key, size=0):
+    def __init__(self, color="", value=0, name="", surface_key="", size=0):
         pygame.sprite.Sprite.__init__(self)
         self.color = color
         self.value = value
@@ -185,6 +185,17 @@ class CardType():
 
     @classmethod
     def check_straight(cls, cards=[]):
+
+        # 去除重复面值的
+        if len(cards) > 0:
+            cards = get_distinct_value_card_list(cards)
+        else:
+            return False
+
+        # 判断Ace存在的情况
+        if cards[0].value == 14:
+            cards.append(Card(value=1))
+
         time = 0
         for i in range(len(cards)):
             if i < len(cards) - 1:
@@ -192,6 +203,10 @@ class CardType():
                     time += 1
                 else:
                     time = 0
+        # 移除临时变量
+        if cards[len(cards) - 1].value == 1:
+            cards.remove(cards[len(cards) - 1])
+
         return True if time > 4 else False
 
     @classmethod
@@ -326,3 +341,64 @@ class CardType():
         print("是否有同花", has_flush)
         print("是否有同花顺", has_straight_flush)
         print("是否有顺子", has_straight)
+
+
+def my_func(cardlist, new_cardlist=[]):
+    card_flush_count = {"spades": {"num": 0, "items": []}, "hearts": {"num": 0, "items": []},
+                        "clubs": {"num": 0, "items": []}, "diamonds": {"num": 0, "items": []}}
+
+    # 按花色筛选
+    for i in range(len(cardlist)):
+        # 筛选同花
+        for key in card_flush_count:
+            if key == cardlist[i].color:
+                card_flush_count[key]["num"] += 1
+                card_flush_count[key]["items"].append(cardlist[i])
+
+
+    for key in card_flush_count:
+        if card_flush_count[key]["num"] > 4:
+            # 检查是否为同花顺
+            if CardType.check_straight(card_flush_count[key]["items"]):
+                return my_func(getUnless(cardlist, card_flush_count[key]["items"]), card_flush_count[key]["items"])
+            else:
+                pass
+
+    if len(d3) == 5:
+
+        # 保留同花顺 其余牌都给第二道
+        for key in card_flush_count:
+            d2 += card_flush_count[key]
+
+        pairs = CardGroup.check_pair(d2)
+        # 没有对子
+        if pairs[0] < 1:
+            pass
+        else:
+            # m没有葫芦
+            if pairs[1] < 1:
+                pass
+            else:
+                # 没有炸弹
+                if pairs[2] < 1:
+                    pass
+    else:
+        pass
+
+
+def getUnless(list=[], remove_list=[]):
+    for obj in remove_list:
+        if list.count(obj) > 0:
+            list.remove(obj)
+    return list
+
+
+def get_distinct_value_card_list(cardlist=[]):
+    values = []
+    new_list = []
+    for card in cardlist:
+        if values.count(card.value) == 0:
+            values.append(card.value)
+        else:
+            new_list.append(card)
+    return new_list
