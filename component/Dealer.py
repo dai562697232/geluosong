@@ -30,9 +30,8 @@ def deal():
     players = []
     for i in range(4):
         players.append(CardGroup(all_cards[i * 13:(i + 1) * 13]))
+
     return players
 
 
-
 # 洗牌
-

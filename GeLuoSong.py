@@ -126,6 +126,11 @@ finish_put = False
 
 full_screen = False
 
+# get_optimal_combination(player1)
+# get_optimal_combination(player2)
+# get_optimal_combination(player3)
+# get_optimal_combination(player4)
+
 
 def handle_card_moving(group_index=-1):
     global put_area_cards_moving
@@ -374,7 +379,7 @@ while True:
                                     lr_function_buttons_start_height + i * lr_function_buttons_start_space))
 
             screen.blit(pygame.transform.smoothscale(buttons_image_data[MENU_BUTTON_OUTLINE], (160, 47)),
-                        (screen_width - 160-10, 10))
+                        (screen_width - 160 - 10, 10))
 
             screen.blit(pygame.transform.smoothscale(buttons_image_data[EXCHANGE_BUTTON],
                                                      (exchange_button_width, exchange_button_height)),
@@ -393,6 +398,10 @@ while True:
                             space=player1_area_card_spacing, pre_selected=hand_pre_selected)
             player2.resize(-2)
             player2.draw_to(screen, (0, 0))
+            player3.resize(-2)
+            player3.draw_to(screen, (0, 100))
+            player4.resize(-2)
+            player4.draw_to(screen, (0, 200))
 
             # 渲染放置区域
             for i in range(len(groups)):
