@@ -2,15 +2,111 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7007be25-f8a8-4f90-b9cb-8c9293ed6bce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/game/component/CardTypes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/img/buttons/menu_button.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/img/buttons/menu_button_outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/GeLuoSong.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/GeLuoSong.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/GeLuoSong_copy.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/GeLuoSong_copy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/component/InitImageData.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/component/InitImageData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/component/Poker.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/component/Poker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learn/Unit2-1_获取系统事件.py" beforeDir="false" afterPath="$PROJECT_DIR$/learn/Unit2-1_获取系统事件.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/GeLuoSong.py" beforeDir="false" afterPath="$PROJECT_DIR$/GeLuoSong.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/GeLuoSong_copy.py" beforeDir="false" afterPath="$PROJECT_DIR$/GeLuoSong_copy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/component/Button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/component/CardTypes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/component/Dealer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/component/InitImageData.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/component/MyEvents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/component/Poker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/basic/gls1366_768.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/basic/sky_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/cancel_all.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/cancel_all_outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/exchange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/exchange_outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/finish_put.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/finish_put_outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/menu_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/menu_button_outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/play_dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/sort_switch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/buttons/sort_switch_outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/poker-table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/10_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/10_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/10_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/10_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/2_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/2_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/2_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/2_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/3_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/3_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/3_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/3_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/4_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/4_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/4_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/4_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/5_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/5_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/5_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/5_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/6_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/6_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/6_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/6_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/7_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/7_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/7_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/7_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/8_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/8_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/8_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/8_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/9_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/9_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/9_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/9_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/ace_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/ace_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/ace_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/ace_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/black_joker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/cardback.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/cardback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/chip1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/chip100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/chip25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/chip5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/dealerbutton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/jack_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/jack_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/jack_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/jack_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/king_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/king_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/king_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/king_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/poker-table.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/queen_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/queen_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/queen_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/queen_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/img/pokerimg/red_joker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/text.py" beforeDir="false" afterPath="$PROJECT_DIR$/text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Unit1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Unit2-1_获取系统事件.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Unit2-2_处理键盘事件.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Unit2-3_处理鼠标事件.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/Unit6_鼠标控制精灵.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/img/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/img/fugu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/img/poker-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/img/skya.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/learn/img/sushiplate.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/skya.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +117,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/poker$Unit2.coverage" NAME="Unit2 Coverage Results" MODIFIED="1610973549154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
     <SUITE FILE_PATH="coverage/geluosong$GeLuoSong.coverage" NAME="GeLuoSong Coverage Results" MODIFIED="1611678257136" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
-    <SUITE FILE_PATH="coverage/poker$GeLuoSong.coverage" NAME="GeLuoSong Coverage Results" MODIFIED="1611745064218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
+    <SUITE FILE_PATH="coverage/poker$GeLuoSong.coverage" NAME="GeLuoSong Coverage Results" MODIFIED="1611798404089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
     <SUITE FILE_PATH="coverage/poker$GeLuoSong_copy.coverage" NAME="GeLuoSong_copy Coverage Results" MODIFIED="1611728072180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
     <SUITE FILE_PATH="coverage/poker$_pydev_execfile.coverage" NAME="_pydev_execfile Coverage Results" MODIFIED="1611709846743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps" />
     <SUITE FILE_PATH="coverage/poker$Unit2_1_.coverage" NAME="Unit2-1_获取系统事件 Coverage Results" MODIFIED="1611711960605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
@@ -36,6 +132,7 @@
     <SUITE FILE_PATH="coverage/poker$Deal.coverage" NAME="Deal Coverage Results" MODIFIED="1611305057096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game/component" />
     <SUITE FILE_PATH="coverage/poker$Unit1.coverage" NAME="Unit1 Coverage Results" MODIFIED="1610972695439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
     <SUITE FILE_PATH="coverage/poker$Test.coverage" NAME="Test Coverage Results" MODIFIED="1611032372165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
+    <SUITE FILE_PATH="coverage/poker$GeLuoSong__1_.coverage" NAME="GeLuoSong (1) Coverage Results" MODIFIED="1611798667803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/poker$LoadImgData.coverage" NAME="LoadImgData Coverage Results" MODIFIED="1611042283729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game/component" />
     <SUITE FILE_PATH="coverage/poker$Unit2_2.coverage" NAME="Unit2-2 Coverage Results" MODIFIED="1610973702969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/learn" />
   </component>
@@ -56,40 +153,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/GeLuoSong.py">
+        <entry file="file://$PROJECT_DIR$/GeLuoSong.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3072">
-              <caret line="376" column="52" lean-forward="true" selection-start-line="376" selection-start-column="52" selection-end-line="376" selection-end-column="52" />
+            <state relative-caret-position="171">
+              <caret line="33" column="13" lean-forward="true" selection-start-line="5" selection-end-line="6" selection-end-column="13" />
               <folding>
-                <element signature="e#11419#14079#0" />
-                <element signature="e#15207#16216#0" />
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/game/component/Poker.py">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="157" column="12" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/component/CardTypes.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game/component/InitImageData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -193,6 +272,10 @@
         <option value="$PROJECT_DIR$/game/GeLuoSong.py" />
         <option value="$PROJECT_DIR$/game/component/CardTypes.py" />
         <option value="$PROJECT_DIR$/game/component/Poker.py" />
+        <option value="$PROJECT_DIR$/GeLuoSong.py" />
+        <option value="$PROJECT_DIR$/component/Dealer.py" />
+        <option value="$PROJECT_DIR$/component/Poker.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -218,22 +301,6 @@
               <item name="poker" type="b2602c69:ProjectViewProjectNode" />
               <item name="poker" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="poker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="poker" type="462c0819:PsiDirectoryNode" />
-              <item name="learn" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -248,19 +315,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\workspace\py\poker\game\img\buttons" />
-      <recent name="C:\workspace\py\poker\game" />
-      <recent name="C:\workspace\py\poker\game\img" />
-      <recent name="C:\workspace\py\poker\game\component\img" />
-      <recent name="C:\workspace\py\poker\game\component" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\py\poker" />
       <recent name="C:\workspace\py\poker\game\img\basic" />
       <recent name="C:\workspace\py\poker\game\img\buttons" />
       <recent name="C:\workspace\py\poker\game" />
       <recent name="C:\workspace\py\poker\game\component" />
-      <recent name="C:\workspace\py\poker\component" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\workspace\py\poker" />
+      <recent name="C:\workspace\py\poker\game\img\buttons" />
+      <recent name="C:\workspace\py\poker\game" />
+      <recent name="C:\workspace\py\poker\game\img" />
+      <recent name="C:\workspace\py\poker\game\component\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -275,7 +342,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.GeLuoSong">
+  <component name="RunManager" selected="Python.GeLuoSong (1)">
+    <configuration name="GeLuoSong (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="poker" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GeLuoSong.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="GeLuoSong" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="poker" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -289,7 +378,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game/GeLuoSong.py" />
+      <option name="SCRIPT_NAME" value="C:\workspace\py\poker\GeLuoSong.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -311,7 +400,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game/GeLuoSong_copy.py" />
+      <option name="SCRIPT_NAME" value="C:\workspace\py\poker\GeLuoSong_copy.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -364,35 +453,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="_pydev_execfile" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="poker" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GeLuoSong (1)" />
         <item itemvalue="Python.GeLuoSong" />
         <item itemvalue="Python.Poker" />
         <item itemvalue="Python.GeLuoSong_copy" />
         <item itemvalue="Python.Unit2-1_获取系统事件" />
-        <item itemvalue="Python._pydev_execfile" />
       </list>
     </recent_temporary>
   </component>
@@ -424,23 +491,24 @@
       <workItem from="1611620417896" duration="28412000" />
       <workItem from="1611667950690" duration="6770000" />
       <workItem from="1611708389843" duration="18628000" />
-      <workItem from="1611728728806" duration="15656000" />
+      <workItem from="1611728728806" duration="15798000" />
+      <workItem from="1611794617746" duration="2120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239498000" />
+    <option name="totallyTimeSpent" value="241760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23027718" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23294243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49413645" visible="true" weight="0.26898047" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49413645" visible="true" weight="0.26898047" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.5618221" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -448,8 +516,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50586355" side_tool="true" weight="0.17462039" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3066089" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50319827" side_tool="true" weight="0.3264642" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4968017" weight="0.24186552" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -492,18 +560,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/game/img/poker-table.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://C:/dev/python/Lib/typing.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/1621164513/pygame/event.py" />
-    <entry file="file://C:/dev/python/Lib/site-packages/pygame/event.pyi" />
-    <entry file="file://$PROJECT_DIR$/game/img/pokerimg/2_of_diamonds.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/img/pokerimg/3_of_clubs.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/game/img/pokerimg/3_of_diamonds.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -529,7 +585,7 @@
     <entry file="file://C:/dev/python/Lib/random.py" />
     <entry file="file://C:/dev/python/Lib/functools.py" />
     <entry file="file://C:/dev/python/Lib/site-packages/pygame/__init__.pyi" />
-    <entry file="file://$PROJECT_DIR$/game/text.py">
+    <entry file="file://$PROJECT_DIR$/text.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/game/img/buttons/sort_switch_outline.png">
@@ -552,25 +608,6 @@
     </entry>
     <entry file="file://C:/dev/python/Lib/site-packages/pygame/surface.pyi" />
     <entry file="file://C:/dev/python/Lib/site-packages/pygame/sprite.pyi" />
-    <entry file="file://$PROJECT_DIR$/game/component/Button.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/component/Dealer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/component/MyEvents.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/dev/python/Lib/site-packages/pygame/sprite.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/1621164513/pygame/mouse.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/1621164513/pygame/key.py" />
@@ -609,7 +646,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/GeLuoSong_copy.py">
+    <entry file="file://$PROJECT_DIR$/GeLuoSong_copy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1789">
           <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
@@ -629,23 +666,27 @@
     <entry file="file://$PROJECT_DIR$/game/img/buttons/menu_button.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/img/buttons/menu_button.png">
+    <entry file="file://$PROJECT_DIR$/back.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/GeLuoSong.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3072">
-          <caret line="376" column="52" lean-forward="true" selection-start-line="376" selection-start-column="52" selection-end-line="376" selection-end-column="52" />
-          <folding>
-            <element signature="e#11419#14079#0" />
-            <element signature="e#15207#16216#0" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Game.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/component/InitImageData.py">
+    <entry file="file://$PROJECT_DIR$/skya.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/basic/sky_background.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/pokerimg/2_of_clubs.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/Button.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/InitImageData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="437">
           <caret line="24" column="42" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="42" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -653,13 +694,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/component/CardTypes.py">
+    <entry file="file://$PROJECT_DIR$/component/Dealer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/CardTypes.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/component/Poker.py">
+    <entry file="file://$PROJECT_DIR$/component/MyEvents.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="157" column="12" selection-start-line="157" selection-start-column="12" selection-end-line="157" selection-end-column="12" />
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/basic/gls1366_768.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/Poker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GeLuoSong.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="33" column="13" lean-forward="true" selection-start-line="5" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>

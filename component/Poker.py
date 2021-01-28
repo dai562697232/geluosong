@@ -2,7 +2,7 @@ from functools import cmp_to_key
 
 from pygame.sprite import Sprite
 
-from game.component.InitImageData import *
+from component.InitImageData import *
 
 # 极小
 X_SMALL_CARD_SIZE = -2

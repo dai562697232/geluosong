@@ -1,4 +1,4 @@
-from game.component.Poker import *
+from component.Poker import *
 import random
 
 

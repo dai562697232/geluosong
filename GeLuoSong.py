@@ -1,8 +1,8 @@
 import pygame
 from pygame.locals import *
 from sys import exit
-from game.component.Poker import *
-from game.component import Dealer
+from component.Poker import *
+from component import Dealer
 
 pygame.init()
 pygame.display.set_caption("割罗松")  # 设置标题
