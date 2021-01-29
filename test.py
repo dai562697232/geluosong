@@ -40,5 +40,3 @@ print(t_list2)
 #     if t_list[i].age == 21:
 #         obj = t_list[i]
 #         print(t_list.index(obj))
-def t():
-    pass
