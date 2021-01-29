@@ -82,9 +82,9 @@ player2 = players[1]
 player3 = players[2]
 player4 = players[3]
 
-first_put_group = CardGroup([], True)
-second_put_group = CardGroup([], True)
-third_put_group = CardGroup([], True)
+first_put_group = CardGroup([], 1)
+second_put_group = CardGroup([], 1)
+third_put_group = CardGroup([], 1)
 
 clock = pygame.time.Clock
 
@@ -103,7 +103,7 @@ first_put_pre_selected = -1
 hand_card_moving = False
 first_put_card_moving = False
 
-sort_by_value = True
+sort_method = 1
 
 
 # 左键单击
@@ -152,7 +152,7 @@ def handle_card_moving(group_index=-1):
                             player1.remove(cur_card)
                             cur_card.resize(-1)
                             groups[i].add(cur_card)
-                            groups[i].sort_cards(True)
+                            groups[i].sort_cards(1)
                             put_done = True
                         else:
                             if not put_done:
@@ -182,7 +182,7 @@ def handle_card_moving(group_index=-1):
                                 groups[group_index].remove(cur_card)
                                 cur_card.resize(-1)
                                 groups[i].add(cur_card)
-                                groups[i].sort_cards(True)
+                                groups[i].sort_cards(1)
                                 pre_selected_list[group_index] = -1
                                 put_area_cards_moving = -1
                         else:
@@ -200,7 +200,7 @@ def hand_card_quick_put(index):
             player1.remove(card)
             card.resize(-1)
             groups[i].add(card)
-            groups[i].sort_cards(True)
+            groups[i].sort_cards(1)
             index = -1
 
     return index
@@ -228,12 +228,12 @@ def on_mouse_to_put_area():
                         card.resize()
                         groups[i].remove(card)
                         player1.add(card)
-                        player1.sort_cards(sort_by_value)
+                        player1.sort_cards(sort_method)
 
 
 def on_mouse_to_lr_function_area():
     global finish_put
-    global sort_by_value
+    global sort_method
     for i in range(len(lr_function_buttons_surf_list)):
         if lr_function_buttons_start_width < current_mouse_pos_x < lr_function_buttons_width + \
                 lr_function_buttons_start_width and lr_function_buttons_start_height + \
@@ -252,8 +252,8 @@ def on_mouse_to_lr_function_area():
                     print(finish_put)
 
                 if i == 1 and len(player1.sprites()) > 0:
-                    sort_by_value = not sort_by_value
-                    player1.sort_cards(sort_by_value)
+                    sort_method = sort_method * -1
+                    player1.sort_cards(sort_method)
 
                 if i == 2 and len(player1.sprites()) != 13:
                     for i in range(len(groups)):
@@ -261,7 +261,7 @@ def on_mouse_to_lr_function_area():
                             list = groups[i].sprites()
                             groups[i].remove(list)
                             player1.add(list)
-                            player1.sort_cards(sort_by_value)
+                            player1.sort_cards(sort_method)
                             player1.resize()
 
 

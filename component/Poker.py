@@ -19,6 +19,9 @@ NORMAL_CARD_HEIGHT = 159
 # 大
 LARGE_CARD_SIZE = 1
 
+BY_COLOR = -1
+BY_VALUE = 1
+
 
 def resize_cards_const(w_scale, h_scale):
     # 极小
@@ -90,12 +93,13 @@ class Card(pygame.sprite.Sprite):
 
 
 class CardGroup(pygame.sprite.Group):
-    def __init__(self, cards=[], by_value=True):
+    def __init__(self, cards=[], sort_method=0):
 
-        if by_value:
+        if sort_method == 1:
             cards.sort(key=cmp_to_key(comp_value_color))
-        else:
+        elif sort_method == -1:
             cards.sort(key=cmp_to_key(comp_color_value))
+
         pygame.sprite.Group.__init__(self, cards)
 
     def draw_to(self, surface, xy, space=0, pre_selected=-1):
@@ -114,8 +118,8 @@ class CardGroup(pygame.sprite.Group):
         for s in self.sprites():
             s.resize(size)
 
-    def sort_cards(self, by_value=True):
-        self = self.__init__(self.sprites(), by_value)
+    def sort_cards(self, sort_method=0):
+        self = self.__init__(self.sprites(), sort_method)
 
 
 # 排序算法
@@ -144,23 +148,24 @@ class CardType():
         self.shorthand = "noshorthand"
         self.rank = -1
 
-    def check_pair(self):
+    @classmethod
+    def check_pair(cls, card_list):
         arr = []
         pair_num = []
         three_num = []
         fore_num = []
 
-        for i in range(len(self.card_list)):
-            if arr.count(self.card_list[i].value) == 0:
-                arr.append(self.card_list[i].value)
+        for i in range(len(card_list)):
+            if arr.count(card_list[i].value) == 0:
+                arr.append(card_list[i].value)
             else:
-                if pair_num.count(self.card_list[i].value) == 0:
-                    pair_num.append(self.card_list[i].value)
+                if pair_num.count(card_list[i].value) == 0:
+                    pair_num.append(card_list[i].value)
                 else:
-                    if three_num.count(self.card_list[i].value) == 0:
-                        three_num.append(self.card_list[i].value)
+                    if three_num.count(card_list[i].value) == 0:
+                        three_num.append(card_list[i].value)
                     else:
-                        fore_num.append(self.card_list[i].value)
+                        fore_num.append(card_list[i].value)
 
         return len(pair_num), len(three_num), len(fore_num)
 
@@ -343,47 +348,89 @@ class CardType():
         print("是否有顺子", has_straight)
 
 
-def my_func(cardlist, new_cardlist=[]):
+def my_func(bestcombination):
     card_flush_count = {"spades": {"num": 0, "items": []}, "hearts": {"num": 0, "items": []},
                         "clubs": {"num": 0, "items": []}, "diamonds": {"num": 0, "items": []}}
 
     # 按花色筛选
-    for i in range(len(cardlist)):
+    for i in range(len(bestcombination.left)):
         # 筛选同花
         for key in card_flush_count:
-            if key == cardlist[i].color:
+            if key == bestcombination.left[i].color:
                 card_flush_count[key]["num"] += 1
-                card_flush_count[key]["items"].append(cardlist[i])
-
+                card_flush_count[key]["items"].append(bestcombination.left[i])
 
     for key in card_flush_count:
         if card_flush_count[key]["num"] > 4:
             # 检查是否为同花顺
             if CardType.check_straight(card_flush_count[key]["items"]):
-                return my_func(getUnless(cardlist, card_flush_count[key]["items"]), card_flush_count[key]["items"])
-            else:
-                pass
+                bestcombination.d3 = card_flush_count[key]["items"]
+                bestcombination.left = getUnless(bestcombination.left, bestcombination.d3)
+                return my_func(bestcombination)
 
-    if len(d3) == 5:
-
-        # 保留同花顺 其余牌都给第二道
-        for key in card_flush_count:
-            d2 += card_flush_count[key]
-
-        pairs = CardGroup.check_pair(d2)
-        # 没有对子
-        if pairs[0] < 1:
+    pairs = CardType.check_pair(bestcombination.left)
+    # 有炸弹
+    if pairs[2] > 0:
+        # 三个炸弹
+        if pairs[2] == 3:
             pass
-        else:
-            # m没有葫芦
-            if pairs[1] < 1:
-                pass
+        # 两个炸弹
+        elif pairs[2] == 2:
+            foak1 = get_kind(bestcombination.left, 4);
+            foak2 = get_kind(getUnless(bestcombination.left, foak1), 4)
+            if foak1[0].value > foak2[0].value:
+                bestcombination.d3 = foak1
+                bestcombination.d2 = foak2
             else:
-                # 没有炸弹
-                if pairs[2] < 1:
-                    pass
+                bestcombination.d3 = foak2
+                bestcombination.d2 = foak1
+            bestcombination.left = getUnless(bestcombination.left, bestcombination.d2 + bestcombination.d3)
+        else:
+            bestcombination.d3 = get_kind(bestcombination.left, 4)
+            bestcombination.left = getUnless(bestcombination.left, bestcombination.d3)
+        return my_func(bestcombination)
+    # 没有炸弹
     else:
-        pass
+        # 有葫芦
+        if pairs[1] > 0 and pairs[0] > 1:
+            # 四个三张的情况 头三冲+中三张+尾葫芦
+            if pairs[1] == 4:
+                pass
+
+            # 三个三张
+            elif pairs[1] == 3:
+                # 三个三张+两对
+                if pairs[0] == 5:
+                    pass
+                # 三个三张+一对
+                elif pairs[0] == 4:
+                    pass
+                # 三个三张 其它全为散牌
+                else:
+                    pass
+            # 两个三张情况
+            elif pairs[1] == 2:
+                # 两个三张+三对
+                if pairs[0] == 5:
+                    pass
+                # 两个三张+二对
+                if pairs[0] == 4:
+                    pass
+                # 两个三张+一对
+                if pairs[0] == 3:
+                    pass
+                # 只有两个三张
+                else:
+                    pass
+        # 没有葫芦
+        else:
+            pass
+
+
+
+
+
+    return ''
 
 
 def getUnless(list=[], remove_list=[]):
@@ -391,6 +438,18 @@ def getUnless(list=[], remove_list=[]):
         if list.count(obj) > 0:
             list.remove(obj)
     return list
+
+
+def get_kind(cardlist, times):
+    arr = []
+    num_arr = []
+    for c in cardlist:
+        num_arr.append(c.value)
+    for c in cardlist:
+        if num_arr.count(c.value) >= times:
+            arr.append(c)
+
+    return arr
 
 
 def get_distinct_value_card_list(cardlist=[]):
@@ -402,3 +461,13 @@ def get_distinct_value_card_list(cardlist=[]):
         else:
             new_list.append(card)
     return new_list
+
+
+class BestCombination():
+    def __init__(self, cardlist):
+        self.list = cardlist
+        self.value = 0
+        self.d1 = []
+        self.d2 = []
+        self.d3 = []
+        self.left = cardlist

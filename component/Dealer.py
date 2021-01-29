@@ -29,7 +29,7 @@ def deal():
     random.shuffle(all_cards)
     players = []
     for i in range(4):
-        players.append(CardGroup(all_cards[i * 13:(i + 1) * 13]))
+        players.append(CardGroup(all_cards[i * 13:(i + 1) * 13],BY_VALUE))
 
     return players
 
