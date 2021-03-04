@@ -6,6 +6,10 @@ BACKGROUND_WELCOME_IMAGE = "gls1366_768.png"
 BACKGROUND_GAME_IMAGE = "sky_background.png"
 
 # 按钮
+LOGIN_BUTTON = "login.png"
+LOGIN_OUTLINE_BUTTON = "login_outline.png"
+
+
 PLAY_BUTTON_IMG = "play.png"
 PLAY_BUTTON_DARK_IMG = "play_dark.png"
 

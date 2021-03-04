@@ -3,6 +3,7 @@ from pygame.locals import *
 from sys import exit
 from component.Poker import *
 from component import Dealer
+import pygame_textinput
 
 pygame.init()
 pygame.display.set_caption("割罗松")  # 设置标题
@@ -50,6 +51,9 @@ background1 = basal_image_data[BACKGROUND_WELCOME_IMAGE]
 background2 = basal_image_data[BACKGROUND_GAME_IMAGE]
 
 # 设置按钮
+login_button_surf = buttons_image_data[LOGIN_BUTTON]
+login_outline_button_surf = buttons_image_data[LOGIN_OUTLINE_BUTTON]
+
 play_button_surf = buttons_image_data[PLAY_BUTTON_IMG]
 play_button_dark_surf = buttons_image_data[PLAY_BUTTON_DARK_IMG]
 exchange_button_width = 75
@@ -89,7 +93,7 @@ third_put_group = CardGroup([], 1)
 clock = pygame.time.Clock
 
 # 设置 FPS
-FPS = 90
+FPS = 30
 FramePerSec = pygame.time.Clock()
 
 mouse_left_button_click = mouse_wheel_click = mouse_right_button_click = False
@@ -104,6 +108,13 @@ hand_card_moving = False
 first_put_card_moving = False
 
 sort_method = 1
+
+
+def drawTest(text, fontSize=16, position=(0, 0)):
+    font = pygame.font.SysFont("arial", fontSize)
+    font_surf = font.render(text, True, (0, 0, 255))
+
+    return font_surf
 
 
 # 左键单击
@@ -284,88 +295,104 @@ def on_exchange():
                 third_put_group.resize(-1)
 
 
+username_input = pygame_textinput.TextInput()
+username_input.max_string_length = 20
+password_input = pygame_textinput.TextInput()
+password_input.max_string_length = 20
+password_input.password = True
+logined = False
+input_password = False
 while True:
-    for event in pygame.event.get():
 
-        # 退出游戏
-        if event.type == QUIT:
-            print("bye!")
-            exit()
-        if event.type == VIDEORESIZE:
-            # 更新比例
-            cur_screen_width, cur_screen_height = pygame.display.get_window_size()
-            width_scale = cur_screen_width / screen_width
-            height_scale = cur_screen_height / screen_height
+    if logined:
+        for event in pygame.event.get():
 
-            # 屏幕宽高
-            screen_width = int(screen_width * width_scale)
-            screen_height = int(screen_height * height_scale)
-            # 放置区域高度
-            put_area_height = int(put_area_height * height_scale)
-            # 第一道放置区域开始位置
-            first_put_area_x_start = int(first_put_area_x_start * width_scale)
-            # 第二道放置区域开始位置
-            second_put_area_x_start = int(second_put_area_x_start * width_scale)
-            # 第三道放置区域开始位置
-            third_put_area_x_start = int(third_put_area_x_start * width_scale)
+            # 退出游戏
+            if event.type == QUIT:
+                print("bye!")
+                exit()
+            if event.type == VIDEORESIZE:
+                # 更新比例
+                cur_screen_width, cur_screen_height = pygame.display.get_window_size()
+                width_scale = cur_screen_width / screen_width
+                height_scale = cur_screen_height / screen_height
 
-            put_area_start_width_list = [first_put_area_x_start, second_put_area_x_start, third_put_area_x_start]
+                # 屏幕宽高
+                screen_width = int(screen_width * width_scale)
+                screen_height = int(screen_height * height_scale)
+                # 放置区域高度
+                put_area_height = int(put_area_height * height_scale)
+                # 第一道放置区域开始位置
+                first_put_area_x_start = int(first_put_area_x_start * width_scale)
+                # 第二道放置区域开始位置
+                second_put_area_x_start = int(second_put_area_x_start * width_scale)
+                # 第三道放置区域开始位置
+                third_put_area_x_start = int(third_put_area_x_start * width_scale)
 
-            # 设置按钮
-            exchange_button_width = int(exchange_button_width * width_scale)
-            exchange_button_height = int(exchange_button_height * height_scale)
-            exchange_button_start_width = int(exchange_button_start_width * width_scale)
-            exchange_button_start_height = int(exchange_button_start_height * height_scale)
-            # 右下角功能键区域
-            lr_function_buttons_width = int(lr_function_buttons_width * width_scale)
-            lr_function_buttons_height = int(lr_function_buttons_height * height_scale)
-            lr_function_buttons_start_width = int(lr_function_buttons_start_width * width_scale)
-            lr_function_buttons_start_height = int(lr_function_buttons_start_height * height_scale)
-            lr_function_buttons_start_space = int(lr_function_buttons_start_space * height_scale)
+                put_area_start_width_list = [first_put_area_x_start, second_put_area_x_start, third_put_area_x_start]
 
-            # 玩家底部卡牌间距
-            player1_area_card_spacing = int(player1_area_card_spacing * width_scale)
-            player1_card_area_x_start = int(player1_card_area_x_start * width_scale)
-            pre_selected_out_height = int(pre_selected_out_height * height_scale)
+                # 设置按钮
+                exchange_button_width = int(exchange_button_width * width_scale)
+                exchange_button_height = int(exchange_button_height * height_scale)
+                exchange_button_start_width = int(exchange_button_start_width * width_scale)
+                exchange_button_start_height = int(exchange_button_start_height * height_scale)
+                # 右下角功能键区域
+                lr_function_buttons_width = int(lr_function_buttons_width * width_scale)
+                lr_function_buttons_height = int(lr_function_buttons_height * height_scale)
+                lr_function_buttons_start_width = int(lr_function_buttons_start_width * width_scale)
+                lr_function_buttons_start_height = int(lr_function_buttons_start_height * height_scale)
+                lr_function_buttons_start_space = int(lr_function_buttons_start_space * height_scale)
 
-            X_SMALL_CARD_WIDTH = int(X_SMALL_CARD_WIDTH * width_scale)
-            X_SMALL_CARD_HEIGHT = int(X_SMALL_CARD_HEIGHT * height_scale)
+                # 玩家底部卡牌间距
+                player1_area_card_spacing = int(player1_area_card_spacing * width_scale)
+                player1_card_area_x_start = int(player1_card_area_x_start * width_scale)
+                pre_selected_out_height = int(pre_selected_out_height * height_scale)
 
-            # 小
-            SMALL_CARD_WIDTH = int(SMALL_CARD_WIDTH * width_scale)
-            SMALL_CARD_HEIGHT = int(SMALL_CARD_HEIGHT * height_scale)
-            # 一般大小
-            NORMAL_CARD_WIDTH = int(NORMAL_CARD_WIDTH * width_scale)
-            NORMAL_CARD_HEIGHT = int(NORMAL_CARD_HEIGHT * height_scale)
-            resize_cards_const(width_scale, height_scale)
-            print(first_put_area_x_start)
-            for i in range(len(groups)):
-                groups[i].resize(-1)
-            player1.resize()
-        # 获取鼠标信息
-        current_mouse_pos_x, current_mouse_pos_y = pygame.mouse.get_pos()
-        current_mouse_button_pressed_L = pygame.mouse.get_pressed()[0]
-        current_mouse_button_pressed_R = pygame.mouse.get_pressed()[2]
-        # 开始游戏
-        if start:
+                X_SMALL_CARD_WIDTH = int(X_SMALL_CARD_WIDTH * width_scale)
+                X_SMALL_CARD_HEIGHT = int(X_SMALL_CARD_HEIGHT * height_scale)
 
-            # if not full_screen:
-            #     pygame.display.toggle_fullscreen()
-            #     full_screen = True
-            # 渲染组件
-            screen.blit(pygame.transform.smoothscale(background2, (screen_width, screen_height)), (0, 0))
-            pygame.draw.rect(screen, (35, 104, 155),
-                             (first_put_area_x_start, put_area_height, 3 * SMALL_CARD_WIDTH, SMALL_CARD_HEIGHT), 2)
-            pygame.draw.rect(screen, (35, 104, 155),
-                             (second_put_area_x_start, put_area_height, 5 * SMALL_CARD_WIDTH, SMALL_CARD_HEIGHT), 2)
-            pygame.draw.rect(screen, (35, 104, 155),
-                             (third_put_area_x_start, put_area_height, 5 * SMALL_CARD_WIDTH, SMALL_CARD_HEIGHT), 2)
+                # 小
+                SMALL_CARD_WIDTH = int(SMALL_CARD_WIDTH * width_scale)
+                SMALL_CARD_HEIGHT = int(SMALL_CARD_HEIGHT * height_scale)
+                # 一般大小
+                NORMAL_CARD_WIDTH = int(NORMAL_CARD_WIDTH * width_scale)
+                NORMAL_CARD_HEIGHT = int(NORMAL_CARD_HEIGHT * height_scale)
+                resize_cards_const(width_scale, height_scale)
+                print(first_put_area_x_start)
+                for i in range(len(groups)):
+                    groups[i].resize(-1)
+                player1.resize()
+            # 获取鼠标信息
+            current_mouse_pos_x, current_mouse_pos_y = pygame.mouse.get_pos()
+            current_mouse_button_pressed_L = pygame.mouse.get_pressed()[0]
+            current_mouse_button_pressed_R = pygame.mouse.get_pressed()[2]
+            # 开始游戏
+            if start:
 
-            # 渲染右下角功能区
-            for i in range(len(lr_function_buttons_surf_list)):
-                if i == 0:
-                    if len(player1.sprites()) > 0:
-                        pass
+                # if not full_screen:
+                #     pygame.display.toggle_fullscreen()
+                #     full_screen = True
+                # 渲染组件
+                screen.blit(pygame.transform.smoothscale(background2, (screen_width, screen_height)), (0, 0))
+                pygame.draw.rect(screen, (35, 104, 155),
+                                 (first_put_area_x_start, put_area_height, 3 * SMALL_CARD_WIDTH, SMALL_CARD_HEIGHT), 2)
+                pygame.draw.rect(screen, (35, 104, 155),
+                                 (second_put_area_x_start, put_area_height, 5 * SMALL_CARD_WIDTH, SMALL_CARD_HEIGHT), 2)
+                pygame.draw.rect(screen, (35, 104, 155),
+                                 (third_put_area_x_start, put_area_height, 5 * SMALL_CARD_WIDTH, SMALL_CARD_HEIGHT), 2)
+
+                # 渲染右下角功能区
+                for i in range(len(lr_function_buttons_surf_list)):
+                    if i == 0:
+                        if len(player1.sprites()) > 0:
+                            pass
+                        else:
+                            screen.blit(pygame.transform.smoothscale(lr_function_buttons_surf_list[i],
+                                                                     (lr_function_buttons_width,
+                                                                      lr_function_buttons_height)), (
+                                            lr_function_buttons_start_width,
+                                            lr_function_buttons_start_height + i * lr_function_buttons_start_space))
+
                     else:
                         screen.blit(pygame.transform.smoothscale(lr_function_buttons_surf_list[i],
                                                                  (lr_function_buttons_width,
@@ -373,111 +400,136 @@ while True:
                                         lr_function_buttons_start_width,
                                         lr_function_buttons_start_height + i * lr_function_buttons_start_space))
 
+                screen.blit(pygame.transform.smoothscale(buttons_image_data[MENU_BUTTON_OUTLINE], (160, 47)),
+                            (screen_width - 160 - 10, 10))
+
+                screen.blit(pygame.transform.smoothscale(buttons_image_data[EXCHANGE_BUTTON],
+                                                         (exchange_button_width, exchange_button_height)),
+                            (exchange_button_start_width, exchange_button_start_height))
+
+                # 获取手牌区域位置数据
+                cards_len = len(player1.sprites())
+                player1_card_area_x_start = int(
+                    screen_width / 2 - (
+                            (len(player1.sprites()) - 1) * player1_area_card_spacing + NORMAL_CARD_WIDTH) / 2)
+                player1_card_area_x_end = player1_card_area_x_start + (
+                        cards_len - 1) * player1_area_card_spacing + NORMAL_CARD_WIDTH
+                player1_card_area_y_start = screen_height - NORMAL_CARD_HEIGHT - 10
+                player1_card_area_y_end = screen_height - 10
+
+                player1.draw_to(screen, (player1_card_area_x_start, screen_height - NORMAL_CARD_HEIGHT - 10),
+                                space=player1_area_card_spacing, pre_selected=hand_pre_selected)
+                # player2.resize(-2)
+                player2.draw_to(screen, (0, 100), 50)
+                player3.resize(-2)
+                # player3.draw_to(screen, (0, 100))
+                # player4.resize(-2)
+                # player4.draw_to(screen, (0, 200))
+
+                # 渲染放置区域
+                for i in range(len(groups)):
+                    groups[i].draw_to(screen, (put_area_start_width_list[i], put_area_height), 0, pre_selected_list[i])
+
+                if hand_card_moving and len(player1.sprites()) > 0:
+                    handle_card_moving()
+
+                elif put_area_cards_moving != -1:
+                    handle_card_moving(put_area_cards_moving)
+
+
                 else:
-                    screen.blit(pygame.transform.smoothscale(lr_function_buttons_surf_list[i],
-                                                             (lr_function_buttons_width, lr_function_buttons_height)), (
-                                    lr_function_buttons_start_width,
-                                    lr_function_buttons_start_height + i * lr_function_buttons_start_space))
 
-            screen.blit(pygame.transform.smoothscale(buttons_image_data[MENU_BUTTON_OUTLINE], (160, 47)),
-                        (screen_width - 160 - 10, 10))
+                    # 检测鼠标位置
 
-            screen.blit(pygame.transform.smoothscale(buttons_image_data[EXCHANGE_BUTTON],
-                                                     (exchange_button_width, exchange_button_height)),
-                        (exchange_button_start_width, exchange_button_start_height))
+                    # 右下侧按钮区域
+                    on_mouse_to_lr_function_area()
 
-            # 获取手牌区域位置数据
-            cards_len = len(player1.sprites())
-            player1_card_area_x_start = int(
-                screen_width / 2 - ((len(player1.sprites()) - 1) * player1_area_card_spacing + NORMAL_CARD_WIDTH) / 2)
-            player1_card_area_x_end = player1_card_area_x_start + (
-                    cards_len - 1) * player1_area_card_spacing + NORMAL_CARD_WIDTH
-            player1_card_area_y_start = screen_height - NORMAL_CARD_HEIGHT - 10
-            player1_card_area_y_end = screen_height - 10
+                    # 第二道第三道交换按钮
+                    on_exchange()
+                    # 鼠标进入手牌区域 => 手牌预选状态
+                    selected = -1
+                    if player1_card_area_x_start < current_mouse_pos_x < player1_card_area_x_end and \
+                            player1_card_area_y_start < current_mouse_pos_y < player1_card_area_y_end:
+                        # print(current_mouse_pos_x - player1_area_start_width)
 
-            player1.draw_to(screen, (player1_card_area_x_start, screen_height - NORMAL_CARD_HEIGHT - 10),
-                            space=player1_area_card_spacing, pre_selected=hand_pre_selected)
-            # player2.resize(-2)
-            player2.draw_to(screen, (0, 100), 50)
-            player3.resize(-2)
-            # player3.draw_to(screen, (0, 100))
-            # player4.resize(-2)
-            # player4.draw_to(screen, (0, 200))
+                        index = -1
 
-            # 渲染放置区域
-            for i in range(len(groups)):
-                groups[i].draw_to(screen, (put_area_start_width_list[i], put_area_height), 0, pre_selected_list[i])
+                        for i in range(cards_len):
+                            if i != cards_len - 1:
+                                if i * player1_area_card_spacing < current_mouse_pos_x - player1_card_area_x_start <= (
+                                        i + 1) * player1_area_card_spacing:
+                                    index = i
+                            else:
+                                if i * player1_area_card_spacing < current_mouse_pos_x - player1_card_area_x_start <= i \
+                                        * player1_area_card_spacing + player1.sprites()[0].card_width:
+                                    index = i
 
-            if hand_card_moving and len(player1.sprites()) > 0:
-                handle_card_moving()
-
-            elif put_area_cards_moving != -1:
-                handle_card_moving(put_area_cards_moving)
-
-
-            else:
-
-                # 检测鼠标位置
-
-                # 右下侧按钮区域
-                on_mouse_to_lr_function_area()
-
-                # 第二道第三道交换按钮
-                on_exchange()
-                # 鼠标进入手牌区域 => 手牌预选状态
-                selected = -1
-                if player1_card_area_x_start < current_mouse_pos_x < player1_card_area_x_end and \
-                        player1_card_area_y_start < current_mouse_pos_y < player1_card_area_y_end:
-                    # print(current_mouse_pos_x - player1_area_start_width)
-
-                    index = -1
-
-                    for i in range(cards_len):
-                        if i != cards_len - 1:
-                            if i * player1_area_card_spacing < current_mouse_pos_x - player1_card_area_x_start <= (
-                                    i + 1) * player1_area_card_spacing:
-                                index = i
+                        index = hand_card_quick_put(index)
+                        if mouse_l_click(event):
+                            hand_card_moving = True
+                        if index == -1:
+                            pass
                         else:
-                            if i * player1_area_card_spacing < current_mouse_pos_x - player1_card_area_x_start <= i \
-                                    * player1_area_card_spacing + player1.sprites()[0].card_width:
-                                index = i
-
-                    index = hand_card_quick_put(index)
-                    if mouse_l_click(event):
-                        hand_card_moving = True
-                    if index == -1:
-                        pass
+                            if len(player1.sprites()) > 0:
+                                player1.sprites()[index].pre_select(screen, (
+                                    player1_card_area_x_start + index * player1_area_card_spacing,
+                                    screen_height - NORMAL_CARD_HEIGHT - pre_selected_out_height))
+                                hand_pre_selected = index
                     else:
-                        if len(player1.sprites()) > 0:
-                            player1.sprites()[index].pre_select(screen, (
-                                player1_card_area_x_start + index * player1_area_card_spacing,
-                                screen_height - NORMAL_CARD_HEIGHT - pre_selected_out_height))
-                            hand_pre_selected = index
-                else:
-                    hand_pre_selected = -1
+                        hand_pre_selected = -1
 
-                # 鼠标进入放置区域
-                on_mouse_to_put_area()
+                    # 鼠标进入放置区域
+                    on_mouse_to_put_area()
 
-            # 定义鼠标按键点击
-            # 判断左键单击
+                # 定义鼠标按键点击
+                # 判断左键单击
 
-            if not current_mouse_button_pressed_L:
-                hand_card_moving = False
-                first_put_card_moving = False
-                pre_selected_list[0] = -1
+                if not current_mouse_button_pressed_L:
+                    hand_card_moving = False
+                    first_put_card_moving = False
+                    pre_selected_list[0] = -1
 
 
 
-        # 登录界面
+            # 登录界面
+            else:
+                screen.blit(background1, (0, 0))
+                screen.blit(play_button_surf, (530, 330))
+                if 530 <= current_mouse_pos_x <= 530 + 310 and 330 <= current_mouse_pos_y <= 330 + 105:
+                    screen.blit(play_button_dark_surf, (530, 330))
+                    if event.type == MOUSEBUTTONDOWN:
+                        start = True
+                # print(play_button_surf.get_rect())
+
+            # 在新的位置上画图
+
+    else:
+        screen.fill((225, 225, 225))
+        events = pygame.event.get()
+
+        for event in events:
+            if event.type == pygame.QUIT:
+                exit()
+            if event.type == pygame.KEYUP and event.key == K_TAB:
+                print(event.type)
+                input_password = not input_password
+                print(input_password)
+        # Feed it with events every frame
+        username_pos = (530, 200)
+        password_pos = (530, 250)
+
+        if input_password:
+            password_input.update(events)
         else:
-            screen.blit(background1, (0, 0))
-            screen.blit(play_button_surf, (530, 330))
-            if 530 <= current_mouse_pos_x <= 530 + 310 and 330 <= current_mouse_pos_y <= 330 + 105:
-                screen.blit(play_button_dark_surf, (530, 330))
-                if event.type == MOUSEBUTTONDOWN:
-                    start = True
-            # print(play_button_surf.get_rect())
-        # 在新的位置上画图
-        pygame.display.update()
-        FramePerSec.tick(FPS)
+            username_input.update(events)
+
+        screen.blit(password_input.get_surface(), password_pos)
+        screen.blit(username_input.get_surface(), username_pos)
+        print(password_input.hide_cursor)
+        # Blit its surface onto the screen
+        screen.blit(pygame.transform.smoothscale(login_button_surf, (300, 133)), (530, 330))
+        screen.blit(drawTest("USERNAME"),(200,200))
+        screen.blit(drawTest("USERNAME"),(200,300))
+
+    pygame.display.update()
+    FramePerSec.tick(FPS)

@@ -22,6 +22,16 @@ LARGE_CARD_SIZE = 1
 BY_COLOR = -1
 BY_VALUE = 1
 
+# 牌型 值
+SINGLE = 1
+ONE_PAIR = 2
+TWO_PAIR = 3
+THREE_OF_A_KIND = 4
+STRAIGHT = 5
+FLUSH = 6
+FOUR_OF_A_KIND = 7
+STRAIGHT_FLUSH = 8
+
 
 def resize_cards_const(w_scale, h_scale):
     # 极小
@@ -348,89 +358,100 @@ class CardType():
         print("是否有顺子", has_straight)
 
 
-def my_func(bestcombination):
-    card_flush_count = {"spades": {"num": 0, "items": []}, "hearts": {"num": 0, "items": []},
-                        "clubs": {"num": 0, "items": []}, "diamonds": {"num": 0, "items": []}}
-
-    # 按花色筛选
-    for i in range(len(bestcombination.left)):
-        # 筛选同花
-        for key in card_flush_count:
-            if key == bestcombination.left[i].color:
-                card_flush_count[key]["num"] += 1
-                card_flush_count[key]["items"].append(bestcombination.left[i])
-
-    for key in card_flush_count:
-        if card_flush_count[key]["num"] > 4:
-            # 检查是否为同花顺
-            if CardType.check_straight(card_flush_count[key]["items"]):
-                bestcombination.d3 = card_flush_count[key]["items"]
-                bestcombination.left = getUnless(bestcombination.left, bestcombination.d3)
-                return my_func(bestcombination)
-
-    pairs = CardType.check_pair(bestcombination.left)
-    # 有炸弹
-    if pairs[2] > 0:
-        # 三个炸弹
-        if pairs[2] == 3:
-            pass
-        # 两个炸弹
-        elif pairs[2] == 2:
-            foak1 = get_kind(bestcombination.left, 4);
-            foak2 = get_kind(getUnless(bestcombination.left, foak1), 4)
-            if foak1[0].value > foak2[0].value:
-                bestcombination.d3 = foak1
-                bestcombination.d2 = foak2
-            else:
-                bestcombination.d3 = foak2
-                bestcombination.d2 = foak1
-            bestcombination.left = getUnless(bestcombination.left, bestcombination.d2 + bestcombination.d3)
-        else:
-            bestcombination.d3 = get_kind(bestcombination.left, 4)
-            bestcombination.left = getUnless(bestcombination.left, bestcombination.d3)
-        return my_func(bestcombination)
-    # 没有炸弹
-    else:
-        # 有葫芦
-        if pairs[1] > 0 and pairs[0] > 1:
-            # 四个三张的情况 头三冲+中三张+尾葫芦
-            if pairs[1] == 4:
-                pass
-
-            # 三个三张
-            elif pairs[1] == 3:
-                # 三个三张+两对
-                if pairs[0] == 5:
-                    pass
-                # 三个三张+一对
-                elif pairs[0] == 4:
-                    pass
-                # 三个三张 其它全为散牌
-                else:
-                    pass
-            # 两个三张情况
-            elif pairs[1] == 2:
-                # 两个三张+三对
-                if pairs[0] == 5:
-                    pass
-                # 两个三张+二对
-                if pairs[0] == 4:
-                    pass
-                # 两个三张+一对
-                if pairs[0] == 3:
-                    pass
-                # 只有两个三张
-                else:
-                    pass
-        # 没有葫芦
-        else:
-            pass
-
-
-
-
-
-    return ''
+# def my_func(bestcombination):
+#     card_flush_count = {"spades": {"num": 0, "items": []}, "hearts": {"num": 0, "items": []},
+#                         "clubs": {"num": 0, "items": []}, "diamonds": {"num": 0, "items": []}}
+#
+#     # 按花色筛选
+#     for i in range(len(bestcombination.left)):
+#         # 筛选同花
+#         for key in card_flush_count:
+#             if key == bestcombination.left[i].color:
+#                 card_flush_count[key]["num"] += 1
+#                 card_flush_count[key]["items"].append(bestcombination.left[i])
+#
+#     for key in card_flush_count:
+#         if card_flush_count[key]["num"] > 4:
+#             # 检查是否为同花顺
+#             if CardType.check_straight(card_flush_count[key]["items"]):
+#                 excess = card_flush_count[key]["num"] - 5
+#                 if excess > 0:
+#                     flag = 0
+#                     bc_arr = []
+#                     for i in range(excess+1):
+#                         if i + 5 <= len(card_flush_count[key]["items"]):
+#                             bestcombination.d3 = card_flush_count[key]["items"][i:i + 5]
+#                             bestcombination.left = getUnless(bestcombination.left, bestcombination.d3)
+#                             bestcombination.value += STRAIGHT_FLUSH
+#                             bc = my_func(bestcombination)
+#                             if bc.value > flag:
+#                                 bc_arr[0] = bc
+#
+#                     bestcombination.d3 = card_flush_count[key]["items"]
+#                     bestcombination.left = getUnless(bestcombination.left, bestcombination.d3)
+#                     return my_func(bestcombination)
+#
+#     if len(bestcombination.d3) > 5:
+#
+#     pairs = CardType.check_pair(bestcombination.left)
+#     # 有炸弹
+#     if pairs[2] > 0:
+#         # 三个炸弹
+#         if pairs[2] == 3:
+#             pass
+#         # 两个炸弹
+#         elif pairs[2] == 2:
+#             foak1 = get_kind(bestcombination.left, 4);
+#             foak2 = get_kind(getUnless(bestcombination.left, foak1), 4)
+#             if foak1[0].value > foak2[0].value:
+#                 bestcombination.d3 = foak1
+#                 bestcombination.d2 = foak2
+#             else:
+#                 bestcombination.d3 = foak2
+#                 bestcombination.d2 = foak1
+#             bestcombination.left = getUnless(bestcombination.left, bestcombination.d2 + bestcombination.d3)
+#         else:
+#             bestcombination.d3 = get_kind(bestcombination.left, 4)
+#             bestcombination.left = getUnless(bestcombination.left, bestcombination.d3)
+#         return my_func(bestcombination)
+#     # 没有炸弹
+#     else:
+#         # 有葫芦
+#         if pairs[1] > 0 and pairs[0] > 1:
+#             # 四个三张的情况 头三冲+中三张+尾葫芦
+#             if pairs[1] == 4:
+#                 pass
+#
+#             # 三个三张
+#             elif pairs[1] == 3:
+#                 # 三个三张+两对
+#                 if pairs[0] == 5:
+#                     pass
+#                 # 三个三张+一对
+#                 elif pairs[0] == 4:
+#                     pass
+#                 # 三个三张 其它全为散牌
+#                 else:
+#                     pass
+#             # 两个三张情况
+#             elif pairs[1] == 2:
+#                 # 两个三张+三对
+#                 if pairs[0] == 5:
+#                     pass
+#                 # 两个三张+二对
+#                 if pairs[0] == 4:
+#                     pass
+#                 # 两个三张+一对
+#                 if pairs[0] == 3:
+#                     pass
+#                 # 只有两个三张
+#                 else:
+#                     pass
+#         # 没有葫芦
+#         else:
+#             pass
+#
+#     return ''
 
 
 def getUnless(list=[], remove_list=[]):
@@ -471,3 +492,9 @@ class BestCombination():
         self.d2 = []
         self.d3 = []
         self.left = cardlist
+
+
+# def getUnlessStraightFlush(cardlist=[]):
+#     more = cardlist - 5
+#     if more > 5:
+#         for i in range(more - 5):
